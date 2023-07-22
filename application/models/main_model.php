@@ -114,12 +114,14 @@ class Main_model extends CI_Model {
         $userID = $this->session->userdata('username');
         $leadIdentity = $this->get_lead_identity_assigned($userID);
 		$todayDateTime = date('Y-m-d H:i:s');
+		$todayDateTimeStart = date('Y-m-d 00:00:00');
 		
         $this->db->select($selectField)
             ->from('contact_list')
             ->where('callresult',CB_TAG)
 			->where('agent',$userID)
 			->where('is_active',1)
+			->where("CONCAT(`callbackdate`, ' ', `callbacktime`) >=", $todayDateTimeStart)
 			->where("CONCAT(`callbackdate`, ' ', `callbacktime`) <=", $todayDateTime);
 
         $this->get_fixed_where($leadIdentity);

@@ -1,5 +1,5 @@
 <?
-$path = '/var/www/html/template/application/third_party/php/pear';
+$path = BASEPATH .'../application/third_party/php/pear';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 $_SERVER['DOCUMENT_ROOT'] .= '/template';
 include_once($_SERVER['DOCUMENT_ROOT']. '/application/third_party/Spreadsheet/Excel/Writer.php');
