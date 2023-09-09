@@ -47,6 +47,7 @@ class Security_model extends CI_Model {
 	
 	//HEALTH DEC RELATED
 	function checkIsAllowDueToHealthDec($userID){
+		return true; //disabled as of 2023-09-09
 		
 		$config['hostname'] = 'localhost';
 		$config['username'] = 'root';
