@@ -154,6 +154,7 @@ Class Main extends Auth_Controller  {
 
         $data['detail'] = $result;
 		$data['action'] = $action;
+		$data['user_type'] = $this->session->userdata('user_type');
         $this->load->view('script/init');
         $this->load->view('main/edit',$data);
 	}

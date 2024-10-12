@@ -43,7 +43,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 | 
 |--------------------------------------------------------------------------
 /**Create list of define here for specific project**/
-define('PROJECT_NAME','SECOND CARD'); //set this based on the project name
+define('PROJECT_NAME','BANKARD SYSTEM'); //set this based on the project name
 define('CLIENT_NAME','');
 
 

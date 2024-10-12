@@ -54,9 +54,6 @@
 <?}?>
 <div id='div-contact-list'></div>
 <div id='div-general-modal'></div>
-<div id='div-general-modal2'></div>
-<div id='div-general-modal3'></div>
-<div id='div-general-modal4'></div>
 
 
 

@@ -55,8 +55,11 @@ foreach($divPages as $page=>$label){
 <div class='div-given-info'>
     Name: <?=$detail[0]['firstname'] . ' ' . $detail[0]['lastname']?> @ <?=$detail[0]['telno']?>  / <?=$detail[0]['mobileno']?>  / <?=$detail[0]['officeno']?>
     <br>
-    Credit LIMIT: <?=$detail[0]['credit_limit']?><br>
-    Available Credit LIMIT: <?=$detail[0]['ava_cred_limit']?><br>
+	
+	<?if($user_type == ADMIN_CODE){?>
+		Credit LIMIT: <?=$detail[0]['credit_limit']?><br>
+		Available Credit LIMIT: <?=$detail[0]['ava_cred_limit']?><br>
+	<?}?>
     Bill Cycle: <?=$detail[0]['bill_cycle']?><br>
     Double CL: <?=$detail[0]['double_cl']?><br>
 </div>
@@ -896,10 +899,12 @@ foreach($divPages as $page=>$label){
 						 
             /*  required field ADDED as per Sir Vince as of 2018-03-27 BUT only on CARD TYPE*/
              if(callresult == '<?=AG_TAG?>'){
-							$("#c_card_type").addClass('required');
-						 }else{
-							 $("#c_card_type").removeClass('required');
-						 }
+				$("#c_card_type").addClass('required');
+			 }else{
+				 $("#c_card_type").removeClass('required');
+			 }
+			 
+			 
             $('.fs-form').show();
             if($(this).valid()){
 
@@ -940,7 +945,8 @@ foreach($divPages as $page=>$label){
 		
 		$("#callresult").change(function(){
 			var val = $(this).val();
-
+			
+			
             if(val == 'AG'){
                 $('#div-ag-type').show();
                 $('#ag_type').addClass('required');

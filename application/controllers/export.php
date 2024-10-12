@@ -34,12 +34,12 @@ Class Export extends Auth_Controller  {
         $data['data'] = $this->export_model->do_export();
         $data['dataSupple'] = $this->export_model->get_no_of_supple();
         //$data['dataCtrTouch'] = $this->export_model->get_no_of_touched();
-				$data['tran_log_det'] = $this->export_model->get_last_disposition();
+		$data['tran_log_det'] = $this->export_model->get_last_disposition();
         $data['inSubCR'] = explode(',',CR_WITH_SUB_CR);
         $data['cr'] = $this->getLookup('callresult',1);
         $data['subCr'] = ($this->getLookup('NI',1)+$this->getLookup('CB',1));
         $data['ag_type'] = $this->getLookup('AG_TYPE',1);
-				$data['pdata'] = $this->input->get();
+		$data['pdata'] = $this->input->get();
         $data['agent_remarks'] = $this->export_model->get_remarks();
         $this->load->view('export/export',$data);
     }

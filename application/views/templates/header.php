@@ -108,7 +108,9 @@
 							</ul>
 
 						</li>
-						<li><a  href='<?=base_url()?>reports/'>Reports</a></li>
+						<?if($user_type == ADMIN_CODE){?>
+							<li><a  href='<?=base_url()?>reports/'>Reports</a></li>
+						<?}?>
 						<li><a href="<?php echo  base_url() . 'security/logout';?>">Logout</a> </li>
 					<?php endif;?>
 
